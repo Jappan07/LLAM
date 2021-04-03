@@ -1,0 +1,81 @@
+.Container {
+    text-align: center;
+    margin-top: 80px;
+
+    h1 {
+        font-weight: 800;
+        font-size: calc(20px + 2.2vw);
+        margin-bottom: 80px;
+    }
+
+    .AboutSection1 {
+        padding: 5% 15% 15%;
+        background-color: #f4f9fa;
+        font-size: calc(16px + 0.7vw);
+
+        p {
+            letter-spacing: 2px;
+            line-height: 1.8;
+            font-size: calc(14px + 0.8vw);
+        }
+
+        span {
+            color: #6e7582;
+            font-weight: 700;
+        }
+    }
+
+    .AboutSection2 {
+        padding: 5% 10% 5%;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+
+        h2 {
+            font-size: calc(14px + 2.2vw);
+            margin-bottom: 50px;
+        }
+
+        @media screen and(max-width:1200px) {
+            flex-direction: column;
+        }
+
+        .Content {
+            width: 100%;
+
+            @media screen and(max-width:1200px) {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            p {
+                letter-spacing: 1.5px;
+                line-height: 1.8;
+                font-size: calc(14px + 0.6vw);
+                padding: 0 5%;
+            }
+        }
+
+    }
+
+    .TeamSection {
+        background-color: #f8f9fa;
+        padding: 5% 10% 15%;
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: calc(14px + 2.2vw);
+        }
+
+        h3 {
+            font-size: calc(12px + 1.2vw);
+            margin-bottom: 20px;
+        }
+
+        ul {
+            font-size: calc(10px + 0.8vw);
+        }
+    }
+}

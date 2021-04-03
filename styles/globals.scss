@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #a6a9b6 #eeeeee;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #eeeeee;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #a6a9b6;
+
+  border: 3px solid #eeeeee;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1.5px;
+}
+
+
+h1,
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: #2b2b2b;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', sans-serif;
+  color: #2b2b2b
+}
+
+ul {
+  list-style: none;
+}
+
+.errorPage {
+  margin: 400px auto;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+#nprogress .bar {
+  background: #b4edf3 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #b4edf3 !important;
+  border-left-color: #b4edf3 !important;
+}

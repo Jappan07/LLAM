@@ -1,0 +1,45 @@
+.Footer {
+    font-family: 'Open Sans', 'Lato', sans-serif;
+    padding: 20px 100px;
+    background-color: #222831;
+    background-size: 10%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    h1 {
+        color: #fff;
+        font-family: 'Open Sans', 'Lato', sans-serif;
+        font-weight: 500;
+        font-size: 0.7rem;
+    }
+
+    img {
+        width: 80px;
+    }
+
+    p {
+        color: rgb(228, 227, 227);
+        font-size: 0.5rem;
+    }
+
+    .Heart {
+        font-size: 13px;
+        padding: 2px;
+        color: rgb(219, 115, 112);
+        animation: beat .5s infinite alternate;
+    }
+
+    .HHLogo img {
+        border-radius: 50%;
+    }
+
+    @keyframes beat {
+        to {
+            transform: scale(1.2);
+        }
+    }
+}

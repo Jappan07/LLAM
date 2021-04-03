@@ -1,0 +1,25 @@
+.Toolbar {
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 30px;
+    z-index: 90;
+    position: sticky;
+    background-color: #222831;
+    opacity: 0.9;
+}
+
+.Toolbar nav {
+    height: 100%;
+}
+
+@media(max-width:800px) {
+    .DesktopOnly {
+        display: none;
+    }
+}

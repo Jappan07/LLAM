@@ -1,0 +1,39 @@
+.Logo {
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    width: 15%;
+    max-width: 170px;
+    padding: 2px 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(151, 150, 150) 0px 0px 0px 3px;
+    cursor: pointer;
+}
+
+.Logo img {
+    width: 35%;
+}
+
+.Logo p {
+    width: 65%;
+    text-align: center;
+    font-size: -webkit-calc(8px + 0.6vw);
+    font-size: -moz-calc(8px + 0.6vw);
+    font-size: calc(8px + 0.6vw);
+}
+
+@media screen and (max-width:800px) {
+    .Logo {
+        width: 50px;
+    }
+
+    .Logo img {
+        width: 100%;
+    }
+
+    .Logo p {
+        display: none;
+    }
+}

@@ -1,0 +1,21 @@
+.NavigationItems {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.NavigationItems li {
+    margin-left: 10px;
+}
+
+@media (max-width:800px) {
+    .NavigationItems {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 50px;
+    }
+
+    .NavigationItems li {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "locust-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@lottiefiles/lottie-player": "^1.0.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "aos": "^2.3.4",
+    "cesium": "^1.73.0",
+    "cesium-wind": "^1.0.2",
+    "copy-webpack-plugin": "^6.3.2",
+    "framer-motion": "^3.10.5",
+    "next": "10.0.8",
+    "nprogress": "^0.2.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-lottie": "^1.2.3",
+    "sass": "^1.32.8",
+    "wind-core": "^1.1.1-alpha.0"
+  },
+  "devDependencies": {}
+}

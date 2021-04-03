@@ -1,0 +1,93 @@
+.Card {
+    text-align: left;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 40px 30px;
+    background: #ebf5fc;
+    border-radius: 10px;
+    box-shadow: -6px -6px 20px rgba(255, 255, 255, 1), 6px 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+    .CardImage {
+        transform: scale(1.2);
+    }
+
+    &:hover {
+        box-shadow: inset -6px -6px 20px rgba(255, 255, 255, 0.5), inset 6px 6px 20px rgba(0, 0, 0, 0.05);
+
+        .CardImageContainer {
+            transform: scale(0.99);
+        }
+
+        .CardContent {
+            transform: scale(0.99);
+        }
+
+    }
+
+    .CardContent {
+        margin-left: 20px;
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-size: calc(14px + 0.8vw);
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            font-size: calc(12px + 0.6vw);
+        }
+
+    }
+
+    @media screen and (max-width:1000px) {
+        padding: 30px 20px;
+        width: 100%;
+        height: 250px;
+        margin-top: 0px;
+
+        .CardContent {
+            h3 {
+                font-size: 1rem;
+            }
+
+            p {
+                margin-top: 10px;
+                font-size: 0.8rem;
+            }
+
+        }
+    }
+
+    @media screen and(max-width:481px) {
+
+        padding: 30px 20px;
+        width: 100%;
+        height: 150px;
+
+        img {
+            width: 150px;
+        }
+
+        .CardContent {
+
+            h3 {
+                font-size: 0.6rem;
+            }
+
+            p {
+                margin-top: 10px;
+                font-size: 0.4rem;
+            }
+        }
+
+
+    }
+
+}

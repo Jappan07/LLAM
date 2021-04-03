@@ -1,0 +1,44 @@
+.SideDrawer {
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    padding: 0 16px 32px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.30));
+    color: white;
+    background-color: rgb(0, 0, 0, 0.25)
+}
+
+.SideDrawer:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.LogoContainer {
+    color: #000;
+    margin-top: 20px;
+    margin-left: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media(min-width:801px) {
+    .SideDrawer {
+        display: none;
+    }
+}
+
+.Open {
+    transform: translateX(0);
+}
+
+.Close {
+    transform: translateX(-100%);
+}
