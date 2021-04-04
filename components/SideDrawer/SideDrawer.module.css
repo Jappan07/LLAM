@@ -1,6 +1,6 @@
 .SideDrawer {
     position: fixed;
-    width: 280px;
+    width: 40%;
     height: 100%;
     left: 0;
     top: 0;
@@ -13,7 +13,8 @@
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.30));
     color: white;
-    background-color: rgb(0, 0, 0, 0.25)
+    background-color: rgb(0, 0, 0, 0.25);
+    text-align: center
 }
 
 .SideDrawer:hover {
@@ -22,7 +23,7 @@
 
 .LogoContainer {
     color: #000;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 16px;
     display: flex;
     justify-content: flex-start;

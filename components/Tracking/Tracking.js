@@ -7,6 +7,22 @@ function Tracking(props) {
   const init = () => {
     const viewer = new Cesium.Viewer("cesium");
 
+    var points = viewer.scene.primitives.add(new Cesium.PointPrimitiveCollection());
+
+    for (var longitude = -1; longitude < 10; longitude++) {
+      var color = Cesium.Color.PINK;
+      if ((longitude % 2) === 0) {
+        color = Cesium.Color.CYAN;
+      }
+
+      for (var latitude = -1; latitude < 10; latitude++) {
+        points.add({
+          position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
+          color: color
+        });
+      }
+    }
+
     const windOptions = {
       colorScale: [
         'rgb(36,104, 180)',
