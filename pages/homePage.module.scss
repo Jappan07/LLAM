@@ -1,8 +1,9 @@
 .heroSection {
     text-align: center;
     position: relative;
-    max-height: 75vh;
+    max-height: 80vh;
     overflow: hidden;
+    background-color: #ebf5fc;
 
     video {
         object-fit: cover;
@@ -38,12 +39,19 @@
 }
 
 .animation {
-    @media screen and (max-width:950px) {
+    @media screen and (max-width:1200px) {
+        font-size: 32px;
         margin-bottom: 30px;
     }
 
-    @media screen and (max-width:600px) {
+    @media screen and (max-width:800px) {
+        font-size: 22px;
         margin-bottom: 20px;
+    }
+
+    @media screen and (max-width:481px) {
+        font-size: 18px;
+        margin-bottom: 15px;
     }
 
     margin-bottom: 30px;
@@ -52,7 +60,7 @@
     font-family: Helvetica,
     Arial,
     sans-serif;
-    font-size: calc(20px + 1.2vw);
+    font-size: 52px;
     letter-spacing: 1px;
     color: #fff;
     display: inline-block;
@@ -64,7 +72,7 @@
 .first {
     display: inline-block;
     animation: firstSpan 1.5s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    font-weight: 100;
+    font-weight: 200;
     z-index: 1;
     position: relative;
 }
@@ -72,7 +80,7 @@
 .oh {
     display: inline-flex;
     overflow: hidden;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 .second {
@@ -198,6 +206,10 @@
     h1 {
         font-size: calc(16px + 2.2vw);
         margin-bottom: 80px;
+
+        @media screen and (max-width:481px) {
+            margin-bottom: 0px;
+        }
     }
 
     ul {

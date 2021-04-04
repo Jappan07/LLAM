@@ -3,5 +3,9 @@
         width: 50%;
     }
 
+    @media screen and (max-width:481px) {
+        width: 350px;
+    }
+
     width: 500px;
 }

@@ -49,8 +49,9 @@
     @media screen and (max-width:1000px) {
         padding: 30px 20px;
         width: 100%;
-        height: 250px;
+        height: 350px;
         margin-top: 0px;
+        flex-direction: column;
 
         .CardContent {
             h3 {
@@ -69,21 +70,19 @@
 
         padding: 30px 20px;
         width: 100%;
-        height: 150px;
-
-        img {
-            width: 150px;
-        }
+        height: 350px;
 
         .CardContent {
+            margin-top: 5px;
+            text-align: center;
 
             h3 {
-                font-size: 0.6rem;
+                font-size: 0.8rem;
             }
 
             p {
-                margin-top: 10px;
-                font-size: 0.4rem;
+                margin-top: 8px;
+                font-size: 0.6rem;
             }
         }
 

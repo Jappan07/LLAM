@@ -25,6 +25,11 @@
                 max-width: 100%;
             }
         }
+
+        @media screen and (max-width:481px) {
+            padding: 10px 20px;
+            width: 350px;
+        }
     }
 
     .contentBx {
@@ -37,6 +42,11 @@
             font-weight: 700;
             font-size: 1em;
             letter-spacing: 2px;
+
+            @media screen and (max-width:481px) {
+                font-size: 0.8em;
+                letter-spacing: 2px;
+            }
         }
 
         h3 {

@@ -8,7 +8,7 @@
     cursor: pointer;
     background: transparent;
     font-weight: 500;
-    font-family: 'Space Mono', monospace;
+    font-family: lato;
     z-index: 0;
     overflow: hidden;
     border: 3px solid #ffd369;
@@ -39,6 +39,12 @@
     @media screen and (max-width:800px) {
         height: 40px;
         width: 170px;
+    }
+
+    @media screen and (max-width:481px) {
+        height: 30px;
+        width: 150px;
+        border: 1px solid #ffd369;
     }
 }
 

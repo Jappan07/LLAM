@@ -42,4 +42,10 @@
             transform: scale(1.2);
         }
     }
+
+    @media screen and (max-width:481px) {
+        h1 {
+            font-size: 0.4rem;
+        }
+    }
 }
