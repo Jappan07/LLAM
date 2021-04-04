@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as Cesium from 'cesium';
-import CesiumWind from "./wind";
+import CesiumWind from "./Wind";
 import axios from "axios"
 
 const fetchData = async () => {
