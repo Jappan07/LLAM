@@ -7,11 +7,11 @@ const Tracking = dynamic(() => import('../components/Tracking/Tracking'), {
 
 const Tracker = () => {
     const SEO = {
-        title: "Locust Tracking Page",
+        title: "Locust Locator",
         description: "track locusts here",
 
         openGraph: {
-            title: "Locust Tracking Page",
+            title: "Locust Locator",
             description: "track locusts here",
         },
     }

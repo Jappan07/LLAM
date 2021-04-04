@@ -15,12 +15,12 @@ import { NextSeo } from "next-seo"
 
 const HomePage = () => {
     const SEO = {
-        title: "Home Page",
-        description: "this is the homepage of the web app",
+        title: "Locust Location & Apprehension Module",
+        description: "Locate and track locusts around the world!",
 
         openGraph: {
-            title: "Home Page",
-            description: "this is the homepage of the web app",
+            title: "Locust Location & Apprehension Module",
+            description: "Locate and track locusts around the world!",
         },
     }
 

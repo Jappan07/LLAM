@@ -6,11 +6,11 @@ import classes from "./about.module.scss"
 const About = () => {
 
     const SEO = {
-        title: "About page",
+        title: "About",
         description: "about page of LLAM",
 
         openGraph: {
-            title: "About page",
+            title: "About",
             description: "about page of LLAM",
         },
     }
@@ -36,7 +36,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className={classes.AboutSection2}>
-                    <img className={classes.Image} src="/assetss/noLocust.png" height="210" width="210" />
+                    <img className={classes.Image} src="/assetss/noLocust.png" height="200" width="200" />
                     <div className={classes.Content}>
                         <h2>Tracking Locusts = Eliminating Locusts Invasions</h2>
                         <p>Monitoring the attack beforehand would let farmers and government to take immediate actions to safeguard crops from the locust swarms. Immediate control means the use of pesticide sprays, especially biopesticides, which is the most feasible and practical option. </p>
