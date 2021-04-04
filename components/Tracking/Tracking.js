@@ -1,28 +1,50 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import * as Cesium from 'cesium';
-import CesiumWind from "./Wind";
+import CesiumWind from "./wind";
+import axios from "axios"
+
+const fetchData = async () => {
+  let data = []
+  await axios.get("https://services5.arcgis.com/sjP4Ugu5s0dZWLjd/arcgis/rest/services/Swarms_Public/FeatureServer/0/query?where=STARTDATE%20%3E%3D%20TIMESTAMP%20%272021-01-01%2000%3A00%3A00%27%20AND%20STARTDATE%20%3C%3D%20TIMESTAMP%20%272021-04-04%2000%3A00%3A00%27&outFields=STARTDATE,LOCNAME,COUNTRYID,LOCPRESENT&outSR=4326&f=json")
+    .then(response => {
+      response.data.features.map(pos => {
+        console.log(pos)
+        data.push({
+          longitude: pos.geometry.x,
+          latitude: pos.geometry.y
+        })
+      })
+      data = data.slice(0, 10)
+    })
+
+  return data
+}
 
 function Tracking(props) {
-
-  const init = () => {
+  const init = (locationData) => {
     const viewer = new Cesium.Viewer("cesium");
-
     var points = viewer.scene.primitives.add(new Cesium.PointPrimitiveCollection());
-
-    for (var longitude = -1; longitude < 10; longitude++) {
-      var color = Cesium.Color.PINK;
-      if ((longitude % 2) === 0) {
-        color = Cesium.Color.CYAN;
-      }
-
-      for (var latitude = -1; latitude < 10; latitude++) {
+    {
+      locationData.map(coords => {
         points.add({
-          position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
-          color: color
+          position: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude),
+          color: Cesium.Color.RED
         });
-      }
+      })
     }
+    // for (var longitude = -1; longitude < 10; longitude++) {
+    //   var color = Cesium.Color.PINK;
+    //   if ((longitude % 2) === 0) {
+    //     color = Cesium.Color.CYAN;
+    //   }
 
+    //   for (var latitude = -1; latitude < 10; latitude++) {
+    //     points.add({
+    //       position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
+    //       color: color
+    //     });
+    //   }
+    // }
     const windOptions = {
       colorScale: [
         'rgb(36,104, 180)',
@@ -56,13 +78,25 @@ function Tracking(props) {
       });
   }
 
-  useEffect(() => {
-    init();
+  useEffect(async () => {
+    const locationData = await fetchData()
+    init(locationData);
+    // setLocation(locationData)
+    console.warn(locationData[0].longitude)
   }, [])
   return (
     <div id="cesium" />
   );
 
 }
+
+// export const getServerSideProps = async () => {
+//   const locationData = await fetchData()
+//   return {
+//     props: {
+//       location: locationData
+//     }
+//   }
+// }
 
 export default Tracking;
