@@ -10,7 +10,6 @@
 @media (max-width:800px) {
     .NavigationItems {
         flex-direction: column;
-        justify-content: center;
         align-items: flex-start;
         margin-top: 50px;
     }

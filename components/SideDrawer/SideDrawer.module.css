@@ -5,7 +5,6 @@
     left: 0;
     top: 0;
     z-index: 200;
-    padding: 0 16px 32px;
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
     backdrop-filter: blur(10px);
@@ -24,7 +23,7 @@
 .LogoContainer {
     color: #000;
     margin-top: 10px;
-    margin-left: 16px;
+    margin-left: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
