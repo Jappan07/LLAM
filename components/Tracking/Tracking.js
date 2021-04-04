@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import * as Cesium from 'cesium';
-import CesiumWind from "./wind";
+import CesiumWind from "./Wind";
 
 function Tracking(props) {
 

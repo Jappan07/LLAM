@@ -3,6 +3,15 @@ import { useRouter } from "next/router"
 import classes from "./NavigationItem.module.scss"
 import { motion } from "framer-motion";
 
+const refreshPage = (router) => {
+
+    if (router.pathname === "/tracking") {
+        // the app will refresh after navigating away from this link
+        window.location.reload(false)
+        window.location.href = "/";
+    }
+}
+
 const variants = {
     open: {
         y: 0,
@@ -23,14 +32,14 @@ const variants = {
 const NavigationItem = (props) => {
     const router = useRouter()
     const attachedClasses = [classes.NavigationItem]
-    let linkTag = <Link href={props.link}><a className={router.pathname === props.link ? classes.active : ""}>{props.children}</a></Link>
+    let linkTag = <Link href={props.link}><a onClick={() => refreshPage(router)} className={router.pathname === props.link ? classes.active : ""}>{props.children}</a></Link>
 
     if (props.special) {
         attachedClasses.push(classes.SpecialText)
         if (router.pathname === props.link) {
             attachedClasses.push(classes.active)
         }
-        linkTag = <Link as={props.link} href={props.link}><a className={attachedClasses.join(" ")}>{props.children}</a></Link>
+        linkTag = <Link as={props.link} href={props.link}><a onClick={() => refreshPage(router)} className={attachedClasses.join(" ")}>{props.children}</a></Link>
     }
 
     return (
