@@ -3,6 +3,7 @@
     margin: 0;
     padding: 5px 12px;
     height: 60px;
+    width: 200px;
     outline: none;
     text-decoration: none;
     cursor: pointer;
@@ -38,12 +39,12 @@
 
     @media screen and (max-width:800px) {
         height: 40px;
-        width: 170px;
+        width: 150px;
     }
 
     @media screen and (max-width:481px) {
         height: 30px;
-        width: 150px;
+        width: 130px;
         border: 1px solid #ffd369;
     }
 }

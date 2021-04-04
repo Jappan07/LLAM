@@ -69,7 +69,7 @@ const HomePage = () => {
                     <motion.div initial="hidden" animate="visible" variants={variants}>
                         <Button className={classes.Button} clicked={() => router.push("/tracking")}>Track Locusts <FontAwesomeIcon icon={faSearchLocation} /></Button>
                     </motion.div>
-                    <span onClick={handleClick} className={classes.scrollDown}><ExpandMoreIcon className={classes.Icon} fontSize="large" /></span>
+                    <span onClick={handleClick} className={classes.scrollDown}><ExpandMoreIcon className={classes.Icon} fontSize="medium" /></span>
                 </div>
             </section>
             <section id="features-section" className={classes.FeaturesSection}>

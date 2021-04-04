@@ -22,7 +22,6 @@
             position: relative;
             top: 2vh;
             color: #fff;
-
         }
 
         .Icon {
@@ -72,15 +71,23 @@
 .first {
     display: inline-block;
     animation: firstSpan 1.5s forwards cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    font-weight: 200;
+    font-weight: 100;
     z-index: 1;
     position: relative;
+
+    @media screen and (max-width:481px) {
+        font-weight: 500;
+    }
 }
 
 .oh {
     display: inline-flex;
     overflow: hidden;
-    margin-left: 15px;
+    margin-left: 10px;
+
+    @media screen and (max-width:481px) {
+        margin-left: 2px;
+    }
 }
 
 .second {

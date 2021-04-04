@@ -32,9 +32,20 @@
         &.active div {
             transform: scale(0);
         }
+
+        @media screen and (max-width:481px) {
+            width: 40px;
+
+            &:before,
+            &:after,
+            & div {
+                height: 2px;
+            }
+        }
     }
 
     @media (min-width: 800px) {
         display: none;
     }
+
 }
