@@ -14,7 +14,7 @@ const fetchData = async () => {
           latitude: pos.geometry.y
         })
       })
-      data = data.slice(0, 10)
+      // data = data.slice(0, 100)
     })
 
   return data
