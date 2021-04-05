@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import axios from "axios"
 import * as Cesium from 'cesium';
 import CesiumWind from "./Wind";
-import axios from "axios"
 
+// fetching locust locations
 const fetchData = async () => {
   let data = []
   await axios.get("https://services5.arcgis.com/sjP4Ugu5s0dZWLjd/arcgis/rest/services/Swarms_Public/FeatureServer/0/query?where=STARTDATE%20%3E%3D%20TIMESTAMP%20%272021-01-01%2000%3A00%3A00%27%20AND%20STARTDATE%20%3C%3D%20TIMESTAMP%20%272021-04-04%2000%3A00%3A00%27&outFields=STARTDATE,LOCNAME,COUNTRYID,LOCPRESENT&outSR=4326&f=json")
@@ -14,27 +15,33 @@ const fetchData = async () => {
           latitude: pos.geometry.y
         })
       })
-      // data = data.slice(0, 100)
     })
 
   return data
 }
 
-function Tracking(props) {
+const Tracking = () => {
   const init = (locationData) => {
+
+    // default view over India
     var west = 68.0;
     var south = 7.0;
     var east = 89.0;
     var north = 35.0;
 
-    var rectangle = Cesium.Rectangle.fromDegrees(west, south, east, north);
+    var indiaPosition = Cesium.Rectangle.fromDegrees(west, south, east, north);
 
-    Cesium.Camera.DEFAULT_VIEW_FACTOR = 0.5;
-    Cesium.Camera.DEFAULT_VIEW_RECTANGLE = rectangle;
+    Cesium.Camera.DEFAULT_VIEW_FACTOR = 1.2;
+    Cesium.Camera.DEFAULT_VIEW_RECTANGLE = indiaPosition;
+
+    // initialize viewer
     const viewer = new Cesium.Viewer("cesium", {
       scene3DOnly: true,
     });
+    // enabling lighting effects due to sun
     viewer.scene.globe.enableLighting = true;
+
+    // populating locust locations on globe
     var points = viewer.scene.primitives.add(new Cesium.PointPrimitiveCollection());
     {
       locationData.map(coords => {
@@ -59,6 +66,7 @@ function Tracking(props) {
       },
     });
 
+    // showing position marker on mouse move
     viewer.canvas.addEventListener('mousemove', function (e) {
 
       var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
@@ -85,57 +93,7 @@ function Tracking(props) {
 
     }, false);
 
-    // Mouse over the globe to see the cartographic position
-    // var handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
-    // handler.setInputAction(function (movement) {
-    //   var cartesian = viewer.camera.pickEllipsoid(
-    //     movement.endPosition,
-    //     viewer.scene.globe.ellipsoid
-    //   );
-    //   if (cartesian) {
-    //     var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
-    //     var longitudeString = Cesium.Math.toDegrees(
-    //       cartographic.longitude
-    //     ).toFixed(2);
-    //     var latitudeString = Cesium.Math.toDegrees(
-    //       cartographic.latitude
-    //     ).toFixed(2);
-
-    //     entity.position = cartesian;
-    //     entity.label.show = true;
-    //     entity.label.text =
-    //       "Lon: " +
-    //       ("   " + longitudeString).slice(-7) +
-    //       "\u00B0" +
-    //       "\nLat: " +
-    //       ("   " + latitudeString).slice(-7) +
-    //       "\u00B0";
-    //   } else {
-    //     entity.label.show = false;
-    //   }
-    // })
-
-    // var scene = widget.scene;
-    // var ellipsoid = scene.globe.ellipsoid;
-    // var position = Cesium.Cartesian3.fromDegrees(0.0, 0.0);
-    // var handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
-    // handler.setInputAction(function (movement) {
-    //   console.log(Cesium.SceneTransforms.wgs84ToWindowCoordinates(scene, position));
-    // }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
-
-    // for (var longitude = -1; longitude < 10; longitude++) {
-    //   var color = Cesium.Color.PINK;
-    //   if ((longitude % 2) === 0) {
-    //     color = Cesium.Color.CYAN;
-    //   }
-
-    //   for (var latitude = -1; latitude < 10; latitude++) {
-    //     points.add({
-    //       position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
-    //       color: color
-    //     });
-    //   }
-    // }
+    // Visualizing wind on the globe
     const windOptions = {
       colorScale: [
         'rgb(36,104, 180)',
@@ -172,22 +130,11 @@ function Tracking(props) {
   useEffect(async () => {
     const locationData = await fetchData()
     init(locationData);
-    // setLocation(locationData)
-    console.warn(locationData[0].longitude)
   }, [])
+
   return (
     <div id="cesium" />
   );
-
 }
-
-// export const getServerSideProps = async () => {
-//   const locationData = await fetchData()
-//   return {
-//     props: {
-//       location: locationData
-//     }
-//   }
-// }
 
 export default Tracking;

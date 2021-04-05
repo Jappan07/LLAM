@@ -19,9 +19,9 @@ const Tracker = () => {
     return (
         <>
             <NextSeo {...SEO} />
-            <div>
+            <div style={{ backgroundColor: "#000" }}>
                 <Tracking />
-                <h1 style={{ textAlign: "center", padding: "200px" }}>For best viewing experience use the desktop app.</h1>
+                <h1 style={{ color: "white", textAlign: "center", padding: "200px" }}>For best viewing experience use the desktop app.</h1>
             </div>
         </>
     )
