@@ -113,7 +113,7 @@ const HomePage = () => {
                     <div className={classes.Working}>
                         <ul>
                             <li data-aos="slide-right" data-aos-duration="1300"><NeumorphismCard number="1" Heading="" Text="Collecting Real time data from various source " /></li>
-                            <li data-aos="slide-right" data-aos-duration="1000"><NeumorphismCard number="2" Heading="" Text="Processing these data on our Bi layer ML models to find out the Risk and future attack possibilities " /></li>
+                            <li data-aos="slide-right" data-aos-duration="1000"><NeumorphismCard number="2" Heading="" Text="Processing this data on our Bi-Layer ML models to find out the Risk and future attack possibilities " /></li>
                             <li data-aos="slide-right" data-aos-duration="700"><NeumorphismCard number="3" Heading="" Text="Visualise through Plotting or Quering the data" /></li>
                         </ul>
                     </div>
