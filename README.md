@@ -53,7 +53,7 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 
 ## More about the project 🔥
 
-**Live Demo**: youtube link
+**Live Demo**: https://youtu.be/C1QmCuzrBw8
 
 <h4 align="center">Tracking feature</h4>
 
