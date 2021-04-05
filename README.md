@@ -1,5 +1,5 @@
 <!-- ![](public/assetss/0*OgwmV3DsLS387GMr.png) -->
-<img width="100%" src="public/assetss/0*OgwmV3DsLS387GMr.png" />
+<img width="100%" src="https://github.com/Jappan07/LLAM/blob/master/public/Assets/Screenshot%20from%202021-04-06%2001-27-30.png" />
 
 <img width="200px" src="public/assetss/llamLogo.png" />
 
