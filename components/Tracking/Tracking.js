@@ -22,7 +22,15 @@ const fetchData = async () => {
 
 function Tracking(props) {
   const init = (locationData) => {
+    var west = 68.0;
+    var south = 7.0;
+    var east = 89.0;
+    var north = 35.0;
 
+    var rectangle = Cesium.Rectangle.fromDegrees(west, south, east, north);
+
+    Cesium.Camera.DEFAULT_VIEW_FACTOR = 0.5;
+    Cesium.Camera.DEFAULT_VIEW_RECTANGLE = rectangle;
     const viewer = new Cesium.Viewer("cesium", {
       scene3DOnly: true,
     });
@@ -32,35 +40,34 @@ function Tracking(props) {
       locationData.map(coords => {
         points.add({
           position: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude),
-          color: Cesium.Color.RED
+          color: Cesium.Color.SPRINGGREEN
         });
       })
     }
+
+    // adding position marker
     var entity = viewer.entities.add({
+      name: "location",
       label: {
         show: false,
         showBackground: true,
         font: "14px monospace",
+        style: Cesium.LabelStyle.FILL_AND_OUTLINE,
         horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
-        verticalOrigin: Cesium.VerticalOrigin.TOP,
-        pixelOffset: new Cesium.Cartesian2(15, 0),
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        pixelOffset: new Cesium.Cartesian2(0, -9),
       },
     });
 
     viewer.canvas.addEventListener('mousemove', function (e) {
 
       var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
-
       var ellipsoid = viewer.scene.globe.ellipsoid;
-
       var cartesian = viewer.camera.pickEllipsoid(mousePosition, ellipsoid);
 
       if (cartesian) {
-
         var cartographic = ellipsoid.cartesianToCartographic(cartesian);
-
         var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(2);
-
         var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(2);
 
         entity.position = cartesian;
@@ -74,7 +81,6 @@ function Tracking(props) {
 
       } else {
         entity.label.show = false;
-
       }
 
     }, false);
