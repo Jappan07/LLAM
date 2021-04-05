@@ -1,16 +1,9 @@
-import { useState } from "react"
 import Image from "next/image"
 import { NextSeo } from "next-seo"
 import SecurityIcon from '@material-ui/icons/Security';
 import classes from "./about.module.scss"
-import axios from "axios"
 
 const About = () => {
-    const [predictedData, setPredictedData] = useState("")
-    const [longitude, setLongitude] = useState("")
-    const [latitude, setLatitude] = useState("")
-    const [loading, setLoading] = useState("")
-
     const SEO = {
         title: "About",
         description: "about page of LLAM",
@@ -20,54 +13,13 @@ const About = () => {
             description: "about page of LLAM",
         },
     }
-
-    const onFormSubmitHandler = (event) => {
-        event.preventDefault();
-        console.log("Longitude: " + longitude)
-        console.log("Latitude: " + latitude)
-        let lat = latitude
-        let long = longitude
-        if (!lat && !long) {
-            setPredictedData("error")
-        }
-        else {
-            let data = `lat-${lat}-long-${long}`
-            setLoading("Loading...")
-            axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
-                .then(response => {
-                    setLoading("Done ✅")
-                    setPredictedData(response.data)
-                    console.log(response.data)
-                })
-        }
-    }
-
-
-
     return (
         <>
             <NextSeo {...SEO} />
             <div className={classes.Container}>
-
-
-                <form id="location-form" onSubmit={onFormSubmitHandler} >
-                    <h2>Predicting Attack Factor</h2>
-                    <label htmlFor="longitude">longitude: </label>
-                    <input type="text" name="long" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
-                    <br />
-                    <label htmlFor="latitude">latitude: </label>
-                    <input type="text" name="lat" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
-                    <br />
-                    <button>Predict</button>
-                    <p className="text">{loading}</p>
-                    {predictedData ? <p className="text">{predictedData.risk}%</p> : null}
-                </form>
-
-
                 <h1>Our mission:<br />
                     Safeguard crops from locust attacks
                 </h1>
-
                 <div className={classes.AboutSection1}>
                     <Image src="/assetss/animat-lightbulb-color.gif" width="200" height="200" />
                     <h2 style={{ marginBottom: "18px" }}>L.L.A.M - Locust Location & Apprehension Module</h2>
@@ -101,7 +53,7 @@ const About = () => {
                     </ul> */}
                     </div>
                 </div>
-            </div >
+            </div>
         </>
     )
 }
