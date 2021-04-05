@@ -6,8 +6,11 @@ import classes from "./about.module.scss"
 import axios from "axios"
 
 const About = () => {
+
     useEffect(() => {
-        axios.get("https://landcoverapi.azurewebsites.net/predict/{'lat': '20', 'long': '30'}")
+        let lat = "20"
+        let long = "30"
+        axios.get(`https://landcoverapi.azurewebsites.net/predict/{'lat': ${lat}, 'long': ${long}}`)
             .then(response => {
                 console.log(response.data)
             })
