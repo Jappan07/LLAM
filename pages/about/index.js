@@ -39,6 +39,18 @@ const About = () => {
                         <p>Monitoring the attack beforehand would let farmers and government to take immediate actions to safeguard crops from the locust swarms. Immediate control means the use of pesticide sprays, especially biopesticides, which is the most feasible and practical option. </p>
                     </div>
                 </div>
+                {/* <div className={classes.AboutSection2}>
+                    <iframe src='https://www.youtube.com/embed/watch?v=1YNy2R3hg2Q'
+                        frameBorder='0'
+                        allow='autoplay; encrypted-media'
+                        allowFullScreen
+                        title='video'
+                    />
+                    <div className={classes.Content}>
+                        <h2>Get to know about locusts</h2>
+                        <p>Thanks to BBC Earth.</p>
+                    </div>
+                </div> */}
                 <div className={classes.TeamSection}>
                     <div className={classes.Team}>
                         <h1>Who are we?</h1>
