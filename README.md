@@ -1,7 +1,7 @@
 <!-- ![](public/assetss/0*OgwmV3DsLS387GMr.png) -->
 <img width="100%" src="https://github.com/Jappan07/LLAM/blob/master/public/Assets/Screenshot%20from%202021-04-06%2001-27-30.png" />
 <p align="center">
-<img width="200px" src="public/assetss/llamLogo.png" />
+<img width="300px" src="public/assetss/llamLogo.png" />
 </p> <br>
 
 Project: L.L.A.M - Locust Location & Apprehension Module
