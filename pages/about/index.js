@@ -23,7 +23,7 @@ const About = () => {
                 <div className={classes.AboutSection1}>
                     <Image src="/assetss/animat-lightbulb-color.gif" width="200" height="200" />
                     <h2 style={{ marginBottom: "18px" }}>L.L.A.M - Locust Location & Apprehension Module</h2>
-                    <p><span>We made L.L.A.M because locusts are increasingly becoming a great threat to the vegetation</span> and this threat is reportedly going to increase each year. To safeguard our crops from this plague we needed some solution that could tackle the problem well. </p>
+                    <p><span>We built L.L.A.M because locusts are increasingly becoming a great threat to the vegetation</span> and this threat is reportedly going to increase each year. To safeguard our crops from this plague we needed some solution that could tackle the problem well. </p>
                 </div>
                 <div className={classes.AboutSection2}>
                     <SecurityIcon className={classes.Icon} style={{ fontSize: "10rem" }} />
