@@ -112,9 +112,9 @@ const HomePage = () => {
                     </h1>
                     <div className={classes.Working}>
                         <ul>
-                            <li data-aos="slide-right" data-aos-duration="1300"><NeumorphismCard number="1" Heading="Lorem Ipsum" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod " /></li>
-                            <li data-aos="slide-right" data-aos-duration="1000"><NeumorphismCard number="2" Heading="Lorem Ipsum" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod " /></li>
-                            <li data-aos="slide-right" data-aos-duration="700"><NeumorphismCard number="3" Heading="Lorem Ipsum" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod " /></li>
+                            <li data-aos="slide-right" data-aos-duration="1300"><NeumorphismCard number="1" Heading="" Text="Collecting Real time data from various source " /></li>
+                            <li data-aos="slide-right" data-aos-duration="1000"><NeumorphismCard number="2" Heading="" Text="Processing these data on our bi layer ML models to find out the Risk and future attack possibilities " /></li>
+                            <li data-aos="slide-right" data-aos-duration="700"><NeumorphismCard number="3" Heading="" Text="Visualise through Plotting or Quering the data" /></li>
                         </ul>
                     </div>
                 </section>
