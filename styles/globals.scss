@@ -81,7 +81,7 @@ a {
   overflow: hidden;
   font-family: sans-serif;
 
-  @media screen and (max-width:481px) {
+  @media screen and (max-width:1200px) {
     height: 100vh;
   }
 }
@@ -97,7 +97,7 @@ a {
 
 #location-form {
   text-align: left;
-  width: 15%;
+  width: 20%;
   padding: 1%;
   background-color: rgb(255, 255, 255);
   color: #000;
@@ -107,7 +107,12 @@ a {
   left: 5px;
 
   @media screen and (max-width:768px) {
-    top: 7vh;
+    top: 80px;
+    width: 30%;
+  }
+
+  @media screen and (max-width:481px) {
+    width: 40%;
   }
 
   h2 {
