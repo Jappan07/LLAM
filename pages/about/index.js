@@ -23,13 +23,15 @@ const About = () => {
                 <div className={classes.AboutSection1}>
                     <Image src="/assetss/animat-lightbulb-color.gif" width="200" height="200" />
                     <h2 style={{ marginBottom: "18px" }}>L.L.A.M - Locust Location & Apprehension Module</h2>
-                    <p><span>We made L.L.A.M because locusts are increasingly becoming a great threat to the vegetation</span> and this threat is reportedly going to increase each year. To safeguard our crops from this plague we needed some solution that could tackle the problem well. </p>
+                    <p><span>We have built L.L.A.M because locusts are increasingly becoming a great threat to the vegetation</span> and this threat is reportedly going to increase with each comin year. To safeguard our crops from this plague we needed some solution that could tackle this problem well. </p>
                 </div>
                 <div className={classes.AboutSection2}>
+50
+                        <h2>Get to know about locusts</h
                     <SecurityIcon className={classes.Icon} style={{ fontSize: "10rem" }} />
                     <div className={classes.Content}>
                         <h2>Safeguarding the farmers is our priority</h2>
-                        <p>During 2019-20, locust attack was reported in some districts of Rajasthan and Gujarat in India. Rajasthan Government has reported that a total area of 1,79,584 hectares of 8 districts of the state was affected by locust attack during 2019-20. The State Government of Gujarat has reported that crop loss due to locust attack was observed in a total area of 19,313 hectares of 2 districts of the State during the year 2019-20.<br />This has led to more number of suicides in the region.</p>
+                        <p> Swarm locust has invaded many parts of African and Asian regions and destroyed crops and plantation during their first wave in 2019. They emerged in many billions causing severe food security threats. That was supposed to be the worst invasion that happened in the last 25 years in some of the African Countries. This has led to more number of suicides in the region.<br /> 1.3 million hectares of locust invasion were treated across 10 countries since January last year to stave off an economic and agricultural catastrophe.</p>
                     </div>
                 </div>
                 <div className={classes.AboutSection2}>
