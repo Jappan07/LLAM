@@ -47,8 +47,8 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 ## What's next for L.L.A.M 🚀
 
 - More optimization have to be made.
-- 
-- 
+- Improve accuracy
+- Add layer to predict locust movement using wind data
 
 
 ## More about the project 🔥
