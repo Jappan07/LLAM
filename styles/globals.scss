@@ -99,8 +99,8 @@ a {
   text-align: left;
   width: 18%;
   padding: 1%;
-  background-color: rgb(255, 255, 255);
-  color: #000;
+  background-color: #000;
+  color: #39FF14;
   border-radius: 3px;
   position: absolute;
   top: 10vh;
@@ -120,6 +120,7 @@ a {
   }
 
   h2 {
+    color: #39FF14;
     font-size: calc(8px + 0.5vw);
     margin-bottom: 5px;
 
@@ -133,9 +134,12 @@ a {
   }
 
   input {
+    background-color: #000;
+    color: #39FF14;
     border-radius: 2px;
     width: calc(20px + 8.5vw);
-    border: 1px solid #000;
+    height: 20px;
+    border: 1px solid #39FF14;
 
     @media screen and (max-width:481px) {
       font-size: 8px;
@@ -150,10 +154,12 @@ a {
     border: 1px solid #000;
     border-radius: 1px;
     font-size: calc(8px + 0.4vw);
-    background-color: #fff;
+    background-color: #39FF14;
+    ;
 
     &:hover {
-      background-color: #efef;
+      background-color: #2bc710;
+      ;
     }
   }
 }
