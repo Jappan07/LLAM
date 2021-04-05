@@ -23,6 +23,8 @@ const fetchData = async () => {
 const Tracking = () => {
   const init = (locationData) => {
 
+
+
     // default view over India
     var west = 68.0;
     var south = 7.0;
@@ -41,13 +43,38 @@ const Tracking = () => {
     // enabling lighting effects due to sun
     viewer.scene.globe.enableLighting = true;
 
+
+    var editHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+
+    editHandler.setInputAction(function (e) {
+      var shapeEditMenu = document.getElementById("toolbar");
+      shapeEditMenu.textContent = 'Testing';
+      shapeEditMenu.style.display = "block";
+      shapeEditMenu.style.left = e.position.x + 'px';
+      shapeEditMenu.style.top = e.position.y + 'px';
+      shapeEditMenu.style.background = 'rgba(42, 42, 42, 0.8)';
+      shapeEditMenu.style.border = '1px solid #888';
+    }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
+
+    editHandler.setInputAction(function (e) {
+      var shapeEditMenu = document.getElementById("toolbar");
+      shapeEditMenu.style.display = "none";
+    }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
+
+
+
     // populating locust locations on globe
     var points = viewer.scene.primitives.add(new Cesium.PointPrimitiveCollection());
     {
       locationData.map(coords => {
         points.add({
           position: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude),
-          color: Cesium.Color.SPRINGGREEN
+          color: Cesium.Color.SPRINGGREEN.withAlpha(0.5),
+          pixelSize: 10,
+          label: {
+            text: "Label",
+            show: false,
+          }
         });
       })
     }
@@ -133,7 +160,10 @@ const Tracking = () => {
   }, [])
 
   return (
-    <div id="cesium" />
+    <>
+      <div id="cesium" />
+      <div id="toolbar" />
+    </>
   );
 }
 
