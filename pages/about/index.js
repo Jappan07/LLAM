@@ -26,8 +26,6 @@ const About = () => {
                     <p><span>We have built L.L.A.M because locusts are increasingly becoming a great threat to the vegetation</span> and this threat is reportedly going to increase with each comin year. To safeguard our crops from this plague we needed some solution that could tackle this problem well. </p>
                 </div>
                 <div className={classes.AboutSection2}>
-50
-                        <h2>Get to know about locusts</h
                     <SecurityIcon className={classes.Icon} style={{ fontSize: "10rem" }} />
                     <div className={classes.Content}>
                         <h2>Safeguarding the farmers is our priority</h2>
