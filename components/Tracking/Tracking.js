@@ -23,9 +23,10 @@ const fetchData = async () => {
 
 const Tracking = () => {
   const [predictedData, setPredictedData] = useState(null)
-  const [longitude, setLongitude] = useState("")
-  const [latitude, setLatitude] = useState("")
-  const [loading, setLoading] = useState("")
+  const [displayMessage, setDisplayMessage] = useState("")
+  const [longitude, setLongitude] = useState(0)
+  const [latitude, setLatitude] = useState(0)
+  const [loading, setLoading] = useState(false)
 
   const init = (locationData, prediction) => {
     // default view over India
@@ -178,19 +179,29 @@ const Tracking = () => {
     let lat = latitude
     let long = longitude
     let data = `lat-${lat}-long-${long}`
-    setLoading("Predicting...")
+    setLoading(true)
+    setDisplayMessage("Predicting...")
     axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
       .then(response => {
-        setLoading("Done ✅")
+        setLoading(false)
+        setDisplayMessage("Predicted Probability = ")
         setPredictedData(response.data)
       })
+  }
+
+  const onResetHandler = (event) => {
+    event.preventDefault();
+    setDisplayMessage("")
+    setLongitude(0)
+    setLatitude(0)
+    setPredictedData(null)
   }
 
   return (
     <>
       <div id="cesium" />
       <div id="toolbar" />
-      <form id="location-form" onSubmit={onFormSubmitHandler} >
+      <form id="location-form">
         <h2>Predicting Probability of Attack</h2>
         <label htmlFor="longitude">longitude: </label>
         <input type="text" name="long" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
@@ -198,9 +209,9 @@ const Tracking = () => {
         <label htmlFor="latitude">latitude: </label>
         <input type="text" name="lat" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
         <br />
-        <button>Predict</button>
-        <div>{loading}</div>
-        {predictedData ? <b>Predicted probability = {predictedData.risk.toFixed(2)}%</b> : null}
+        <button onClick={onFormSubmitHandler}>Predict</button>
+        <button onClick={onResetHandler}>Reset</button>
+        {predictedData ? <p>{displayMessage} {predictedData.risk.toFixed(2)}%</p> : null}
       </form>
     </>
   );
