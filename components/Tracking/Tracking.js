@@ -70,7 +70,7 @@ const Tracking = () => {
       locationData.map(coords => {
         billboards.add({
           position: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude),
-          image: '/Assets/Images/Locust_Tracker-2-removebg-preview.ico'
+          image: '/Assets/Images/locust.png'
           // color: Cesium.Color.LIME.withAlpha(0.5),
           // pixelSize: 10,
           // label: {
