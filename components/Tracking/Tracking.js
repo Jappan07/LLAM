@@ -22,9 +22,6 @@ const fetchData = async () => {
 
 const Tracking = () => {
   const init = (locationData) => {
-
-
-
     // default view over India
     var west = 68.0;
     var south = 7.0;
@@ -36,9 +33,13 @@ const Tracking = () => {
     Cesium.Camera.DEFAULT_VIEW_FACTOR = 1.2;
     Cesium.Camera.DEFAULT_VIEW_RECTANGLE = indiaPosition;
 
+    var imagery = Cesium.createDefaultImageryProviderViewModels();
     // initialize viewer
     const viewer = new Cesium.Viewer("cesium", {
-      scene3DOnly: true,
+      scene3DOnly: false,
+      selectionIndicator: true,
+      imageryProviderViewModels: imagery,
+      selectedImageryProviderViewModel: imagery[1]
     });
     // enabling lighting effects due to sun
     viewer.scene.globe.enableLighting = true;
@@ -69,11 +70,11 @@ const Tracking = () => {
       locationData.map(coords => {
         points.add({
           position: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude),
-          color: Cesium.Color.SPRINGGREEN.withAlpha(0.5),
+          color: Cesium.Color.CRIMSON.withAlpha(0.5),
           pixelSize: 10,
           label: {
             text: "Label",
-            show: false,
+            show: true,
           }
         });
       })
@@ -93,7 +94,7 @@ const Tracking = () => {
       },
     });
 
-    // showing position marker on mouse move
+    // showing position popup on mouse move
     viewer.canvas.addEventListener('mousemove', function (e) {
 
       var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
