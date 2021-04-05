@@ -3,6 +3,7 @@ import axios from "axios"
 import * as Cesium from 'cesium';
 import CesiumWind from "./Wind";
 
+
 // fetching locust locations
 const fetchData = async () => {
   let data = []
@@ -21,7 +22,12 @@ const fetchData = async () => {
 }
 
 const Tracking = () => {
-  const init = (locationData) => {
+  const [predictedData, setPredictedData] = useState(null)
+  const [longitude, setLongitude] = useState("")
+  const [latitude, setLatitude] = useState("")
+  const [loading, setLoading] = useState("")
+
+  const init = (locationData, prediction) => {
     // default view over India
     var west = 68.0;
     var south = 7.0;
@@ -45,24 +51,32 @@ const Tracking = () => {
     viewer.scene.globe.enableLighting = true;
 
 
-    var editHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+    // var editHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+    // editHandler.setInputAction(function (e) {
+    //   var shapeEditMenu = document.getElementById("toolbar");
+    //   shapeEditMenu.textContent = 'Testing';
+    //   shapeEditMenu.style.display = "block";
+    //   shapeEditMenu.style.left = e.position.x + 'px';
+    //   shapeEditMenu.style.top = e.position.y + 'px';
+    //   shapeEditMenu.style.background = 'rgba(42, 42, 42, 0.8)';
+    //   shapeEditMenu.style.border = '1px solid #888';
+    // }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
 
-    editHandler.setInputAction(function (e) {
-      var shapeEditMenu = document.getElementById("toolbar");
-      shapeEditMenu.textContent = 'Testing';
-      shapeEditMenu.style.display = "block";
-      shapeEditMenu.style.left = e.position.x + 'px';
-      shapeEditMenu.style.top = e.position.y + 'px';
-      shapeEditMenu.style.background = 'rgba(42, 42, 42, 0.8)';
-      shapeEditMenu.style.border = '1px solid #888';
-    }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
+    // editHandler.setInputAction(function (e) {
+    //   var shapeEditMenu = document.getElementById("toolbar");
+    //   shapeEditMenu.style.display = "none";
+    // }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
 
-    editHandler.setInputAction(function (e) {
-      var shapeEditMenu = document.getElementById("toolbar");
-      shapeEditMenu.style.display = "none";
-    }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
-
-
+    if (prediction) {
+      console.warn("predicted data" + prediction.risk)
+      viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
+        point: {
+          pixelSize: 50,
+          color: Cesium.Color.YELLOW,
+        },
+      });
+    }
 
     // populating locust locations on globe
     var billboards = viewer.scene.primitives.add(new Cesium.BillboardCollection());
@@ -71,15 +85,10 @@ const Tracking = () => {
         billboards.add({
           position: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude),
           image: '/Assets/Images/locust.png'
-          // color: Cesium.Color.LIME.withAlpha(0.5),
-          // pixelSize: 10,
-          // label: {
-          //   text: "Label",
-          //   show: true,
-          // }
         });
       })
     }
+
 
     // adding position marker
     var entity = viewer.entities.add({
@@ -158,13 +167,41 @@ const Tracking = () => {
 
   useEffect(async () => {
     const locationData = await fetchData()
-    init(locationData);
+    const prediction = await predictedData
+    init(locationData, prediction);
   }, [])
+
+  const onFormSubmitHandler = (event) => {
+    event.preventDefault();
+    console.log("Longitude: " + longitude)
+    console.log("Latitude: " + latitude)
+    let lat = latitude
+    let long = longitude
+    let data = `lat-${lat}-long-${long}`
+    setLoading("Predicting...")
+    axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
+      .then(response => {
+        setLoading("Done ✅")
+        setPredictedData(response.data)
+      })
+  }
 
   return (
     <>
       <div id="cesium" />
       <div id="toolbar" />
+      <form id="location-form" onSubmit={onFormSubmitHandler} >
+        <h2>Predicting Probability of Attack</h2>
+        <label htmlFor="longitude">longitude: </label>
+        <input type="text" name="long" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
+        <br />
+        <label htmlFor="latitude">latitude: </label>
+        <input type="text" name="lat" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
+        <br />
+        <button>Predict</button>
+        <div>{loading}</div>
+        {predictedData ? <b>Predicted probability = {predictedData.risk.toFixed(2)}%</b> : null}
+      </form>
     </>
   );
 }

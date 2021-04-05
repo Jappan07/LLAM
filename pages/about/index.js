@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { NextSeo } from "next-seo"
 import SecurityIcon from '@material-ui/icons/Security';
@@ -6,17 +6,10 @@ import classes from "./about.module.scss"
 import axios from "axios"
 
 const About = () => {
-
-    useEffect(() => {
-        let lat = '100'
-        let long = '30'
-        let data = `lat-${lat}-long-${long}`
-        axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
-            .then(response => {
-                console.log(response.data)
-            })
-    }, [])
-
+    const [predictedData, setPredictedData] = useState("")
+    const [longitude, setLongitude] = useState("")
+    const [latitude, setLatitude] = useState("")
+    const [loading, setLoading] = useState("")
 
     const SEO = {
         title: "About",
@@ -28,10 +21,49 @@ const About = () => {
         },
     }
 
+    const onFormSubmitHandler = (event) => {
+        event.preventDefault();
+        console.log("Longitude: " + longitude)
+        console.log("Latitude: " + latitude)
+        let lat = latitude
+        let long = longitude
+        if (!lat && !long) {
+            setPredictedData("error")
+        }
+        else {
+            let data = `lat-${lat}-long-${long}`
+            setLoading("Loading...")
+            axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
+                .then(response => {
+                    setLoading("Done ✅")
+                    setPredictedData(response.data)
+                    console.log(response.data)
+                })
+        }
+    }
+
+
+
     return (
         <>
             <NextSeo {...SEO} />
             <div className={classes.Container}>
+
+
+                <form id="location-form" onSubmit={onFormSubmitHandler} >
+                    <h2>Predicting Attack Factor</h2>
+                    <label htmlFor="longitude">longitude: </label>
+                    <input type="text" name="long" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
+                    <br />
+                    <label htmlFor="latitude">latitude: </label>
+                    <input type="text" name="lat" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
+                    <br />
+                    <button>Predict</button>
+                    <p className="text">{loading}</p>
+                    {predictedData ? <p className="text">{predictedData.risk}%</p> : null}
+                </form>
+
+
                 <h1>Our mission:<br />
                     Safeguard crops from locust attacks
                 </h1>

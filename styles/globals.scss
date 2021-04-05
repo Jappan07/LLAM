@@ -80,6 +80,10 @@ a {
   padding: 0;
   overflow: hidden;
   font-family: sans-serif;
+
+  @media screen and (max-width:481px) {
+    height: 100vh;
+  }
 }
 
 #toolbar {
@@ -89,4 +93,62 @@ a {
   position: absolute;
   // top: 0;
   // left: 0;
+}
+
+#location-form {
+  text-align: left;
+  width: 15%;
+  padding: 1%;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+  border-radius: 3px;
+  position: absolute;
+  top: 10vh;
+  left: 5px;
+
+  @media screen and (max-width:768px) {
+    top: 7vh;
+  }
+
+  h2 {
+    font-size: calc(8px + 0.5vw);
+    margin-bottom: 5px;
+
+    @media screen and (max-width:481px) {
+      margin-bottom: 0px;
+    }
+  }
+
+  label {
+    font-size: calc(8px + 0.5vw);
+  }
+
+  input {
+    border-radius: 2px;
+    width: calc(20px + 8.5vw);
+    border: 1px solid #000;
+
+    @media screen and (max-width:481px) {
+      font-size: 8px;
+    }
+  }
+
+  button {
+    color: #000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 2% 4%;
+    border: 1px solid #000;
+    border-radius: 1px;
+    font-size: calc(8px + 0.4vw);
+    background-color: #fff;
+
+    &:hover {
+      background-color: #efef;
+    }
+  }
+
+  .text {
+    font-size: calc(8px + 0.4vw);
+  }
 }

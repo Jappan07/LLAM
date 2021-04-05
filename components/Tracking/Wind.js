@@ -155,7 +155,6 @@ class CesiumWind {
   }
 
   unproject(pixel) {
-    console.log(this)
     const viewer = this.viewer;
     const pick = new Cesium.Cartesian2(pixel[0], pixel[1]);
     const cartesian = viewer.scene.globe.pick(
