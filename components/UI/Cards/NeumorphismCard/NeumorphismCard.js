@@ -10,7 +10,6 @@ const NeumorphismCard = ({ number, Heading, Text }) => {
                 {/* </div> */}
                 <h1 style={{ color: "grey", fontSize: "10rem" }}>{number}</h1>
                 <div className={classes.contentBx}>
-                    <h3>{Heading}</h3>
                     <h2>{Text}</h2>
                 </div>
             </div>

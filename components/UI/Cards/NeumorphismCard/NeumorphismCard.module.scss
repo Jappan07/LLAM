@@ -40,20 +40,13 @@
         h2 {
             color: #B49900;
             font-weight: 700;
-            font-size: 1em;
+            font-size: 1.4em;
             letter-spacing: 2px;
 
             @media screen and (max-width:481px) {
                 font-size: 0.8em;
                 letter-spacing: 2px;
             }
-        }
-
-        h3 {
-            color: #888;
-            font-weight: 400;
-            font-size: 0.7em;
-            letter-spacing: 2px;
         }
 
         p {
