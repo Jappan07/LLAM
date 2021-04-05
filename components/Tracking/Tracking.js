@@ -68,16 +68,15 @@ const Tracking = () => {
     //   shapeEditMenu.style.display = "none";
     // }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
 
-    if (prediction) {
-      console.warn("predicted data" + prediction.risk)
-      viewer.entities.add({
-        position: Cesium.Cartesian3.fromDegrees(longitude, latitude),
-        point: {
-          pixelSize: 50,
-          color: Cesium.Color.YELLOW,
-        },
-      });
-    }
+    // if (prediction) {
+    viewer.entities.add({
+      position: Cesium.Cartesian3.fromDegrees(70, 30),
+      point: {
+        pixelSize: 30,
+        color: Cesium.Color.CRIMSON.withAlpha(0.4),
+      },
+    });
+    // }
 
     // populating locust locations on globe
     var billboards = viewer.scene.primitives.add(new Cesium.BillboardCollection());
