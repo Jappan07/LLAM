@@ -65,17 +65,18 @@ const Tracking = () => {
 
 
     // populating locust locations on globe
-    var points = viewer.scene.primitives.add(new Cesium.PointPrimitiveCollection());
+    var billboards = viewer.scene.primitives.add(new Cesium.BillboardCollection());
     {
       locationData.map(coords => {
-        points.add({
+        billboards.add({
           position: Cesium.Cartesian3.fromDegrees(coords.longitude, coords.latitude),
-          color: Cesium.Color.CRIMSON.withAlpha(0.5),
-          pixelSize: 10,
-          label: {
-            text: "Label",
-            show: true,
-          }
+          image: '/Assets/Images/Locust_Tracker-2-removebg-preview.ico'
+          // color: Cesium.Color.LIME.withAlpha(0.5),
+          // pixelSize: 10,
+          // label: {
+          //   text: "Label",
+          //   show: true,
+          // }
         });
       })
     }

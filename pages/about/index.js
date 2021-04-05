@@ -1,9 +1,18 @@
+import { useEffect } from "react"
 import Image from "next/image"
 import { NextSeo } from "next-seo"
 import SecurityIcon from '@material-ui/icons/Security';
 import classes from "./about.module.scss"
+import axios from "axios"
 
 const About = () => {
+    useEffect(() => {
+        axios.get("https://landcoverapi.azurewebsites.net/predict/{'lat': '20', 'long': '30'}")
+            .then(response => {
+                console.log(response.data)
+            })
+    }, [])
+
 
     const SEO = {
         title: "About",
