@@ -22,7 +22,11 @@ const fetchData = async () => {
 
 function Tracking(props) {
   const init = (locationData) => {
-    const viewer = new Cesium.Viewer("cesium");
+
+    const viewer = new Cesium.Viewer("cesium", {
+      scene3DOnly: true,
+    });
+    viewer.scene.globe.enableLighting = true;
     var points = viewer.scene.primitives.add(new Cesium.PointPrimitiveCollection());
     {
       locationData.map(coords => {
@@ -32,6 +36,89 @@ function Tracking(props) {
         });
       })
     }
+    var entity = viewer.entities.add({
+      label: {
+        show: false,
+        showBackground: true,
+        font: "14px monospace",
+        horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+        verticalOrigin: Cesium.VerticalOrigin.TOP,
+        pixelOffset: new Cesium.Cartesian2(15, 0),
+      },
+    });
+
+    viewer.canvas.addEventListener('click', function (e) {
+
+      var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
+
+      var ellipsoid = viewer.scene.globe.ellipsoid;
+
+      var cartesian = viewer.camera.pickEllipsoid(mousePosition, ellipsoid);
+
+      if (cartesian) {
+
+        var cartographic = ellipsoid.cartesianToCartographic(cartesian);
+
+        var longitudeString = Cesium.Math.toDegrees(cartographic.longitude).toFixed(2);
+
+        var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(2);
+
+        alert("Longitude: " + longitudeString + ', Latitude:' + latitudeString);
+        entity.position = cartesian;
+        entity.label.show = true;
+        entity.label.text = "Lon: " +
+          ("   " + longitudeString).slice(-7) +
+          "\u00B0" +
+          "\nLat: " +
+          ("   " + latitudeString).slice(-7) +
+          "\u00B0";
+
+      } else {
+        entity.label.show = false;
+        alert('Globe was not picked');
+
+      }
+
+    }, false);
+
+    // Mouse over the globe to see the cartographic position
+    // var handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+    // handler.setInputAction(function (movement) {
+    //   var cartesian = viewer.camera.pickEllipsoid(
+    //     movement.endPosition,
+    //     viewer.scene.globe.ellipsoid
+    //   );
+    //   if (cartesian) {
+    //     var cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+    //     var longitudeString = Cesium.Math.toDegrees(
+    //       cartographic.longitude
+    //     ).toFixed(2);
+    //     var latitudeString = Cesium.Math.toDegrees(
+    //       cartographic.latitude
+    //     ).toFixed(2);
+
+    //     entity.position = cartesian;
+    //     entity.label.show = true;
+    //     entity.label.text =
+    //       "Lon: " +
+    //       ("   " + longitudeString).slice(-7) +
+    //       "\u00B0" +
+    //       "\nLat: " +
+    //       ("   " + latitudeString).slice(-7) +
+    //       "\u00B0";
+    //   } else {
+    //     entity.label.show = false;
+    //   }
+    // })
+
+    // var scene = widget.scene;
+    // var ellipsoid = scene.globe.ellipsoid;
+    // var position = Cesium.Cartesian3.fromDegrees(0.0, 0.0);
+    // var handler = new Cesium.ScreenSpaceEventHandler(scene.canvas);
+    // handler.setInputAction(function (movement) {
+    //   console.log(Cesium.SceneTransforms.wgs84ToWindowCoordinates(scene, position));
+    // }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
     // for (var longitude = -1; longitude < 10; longitude++) {
     //   var color = Cesium.Color.PINK;
     //   if ((longitude % 2) === 0) {
