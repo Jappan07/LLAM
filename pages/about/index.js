@@ -8,9 +8,10 @@ import axios from "axios"
 const About = () => {
 
     useEffect(() => {
-        let lat = "20"
-        let long = "30"
-        axios.get(`https://landcoverapi.azurewebsites.net/predict/{'lat': ${lat}, 'long': ${long}}`)
+        let lat = '100'
+        let long = '30'
+        let data = `lat-${lat}-long-${long}`
+        axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
             .then(response => {
                 console.log(response.data)
             })
