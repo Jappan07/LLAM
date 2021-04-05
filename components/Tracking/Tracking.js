@@ -47,7 +47,7 @@ function Tracking(props) {
       },
     });
 
-    viewer.canvas.addEventListener('click', function (e) {
+    viewer.canvas.addEventListener('mousemove', function (e) {
 
       var mousePosition = new Cesium.Cartesian2(e.clientX, e.clientY);
 
@@ -63,7 +63,6 @@ function Tracking(props) {
 
         var latitudeString = Cesium.Math.toDegrees(cartographic.latitude).toFixed(2);
 
-        alert("Longitude: " + longitudeString + ', Latitude:' + latitudeString);
         entity.position = cartesian;
         entity.label.show = true;
         entity.label.text = "Lon: " +
@@ -75,7 +74,6 @@ function Tracking(props) {
 
       } else {
         entity.label.show = false;
-        alert('Globe was not picked');
 
       }
 
