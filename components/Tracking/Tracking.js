@@ -75,18 +75,17 @@ const Tracking = () => {
     //   shapeEditMenu.style.display = "none";
     // }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
 
-    // const plotPredictedPoint = (long, lat) => {
 
+    // adding predicted point
+    // if (prediction) {
     //   viewer.entities.add({
-    //     position: Cesium.Cartesian3.fromDegrees(long, lat),
+    //     position: Cesium.Cartesian3.fromDegrees(parseInt(longitude), parseInt(latitude)),
     //     point: {
     //       pixelSize: 30,
     //       color: Cesium.Color.CRIMSON.withAlpha(0.4),
     //     },
     //   });
-
     // }
-
 
     // populating locust locations on globe
     var billboards = viewer.scene.primitives.add(new Cesium.BillboardCollection());
@@ -179,7 +178,7 @@ const Tracking = () => {
     const locationData = await fetchData()
     const prediction = await predictedData
     init(locationData, prediction);
-  }, [predictedData])
+  }, [])
 
   const onFormSubmitHandler = (event) => {
     event.preventDefault();
