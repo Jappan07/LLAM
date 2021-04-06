@@ -46,7 +46,7 @@ const Tracking = () => {
       scene3DOnly: false,
       selectionIndicator: true,
       imageryProviderViewModels: imagery,
-      selectedImageryProviderViewModel: imagery[1]
+      selectedImageryProviderViewModel: imagery[1],
     });
     // enabling lighting effects due to sun
     viewer.scene.globe.enableLighting = true;
@@ -69,13 +69,13 @@ const Tracking = () => {
     // }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
 
     // if (prediction) {
-    viewer.entities.add({
-      position: Cesium.Cartesian3.fromDegrees(70, 30),
-      point: {
-        pixelSize: 30,
-        color: Cesium.Color.CRIMSON.withAlpha(0.4),
-      },
-    });
+    // viewer.entities.add({
+    //   position: Cesium.Cartesian3.fromDegrees(70, 30),
+    //   point: {
+    //     pixelSize: 30,
+    //     color: Cesium.Color.CRIMSON.withAlpha(0.4),
+    //   },
+    // });
     // }
 
     // populating locust locations on globe
