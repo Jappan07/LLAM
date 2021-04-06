@@ -41,17 +41,19 @@ const Tracking = () => {
     Cesium.Camera.DEFAULT_VIEW_RECTANGLE = indiaPosition;
 
     var imagery = Cesium.createDefaultImageryProviderViewModels();
+
     // initialize viewer
     const viewer = new Cesium.Viewer("cesium", {
       scene3DOnly: false,
       selectionIndicator: true,
       imageryProviderViewModels: imagery,
       selectedImageryProviderViewModel: imagery[1],
+      // automaticallyTrackDataSourceClocks: false
     });
     // enabling lighting effects due to sun
-    viewer.scene.globe.enableLighting = true;
+    // viewer.scene.globe.enableLighting = true;
 
-    // adding sentinel 2a satellite realtime visualization
+    // adding sentinel 2a, meteo 10 and spot 6 satellite realtime visualization
     var dataSrc = Cesium.CzmlDataSource.load("orbit.czml");
     viewer.dataSources.add(dataSrc);
 
