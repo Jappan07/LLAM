@@ -36,6 +36,7 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 ## What accomplishments are we most proud of? 👏
 
 - Visualizing the data on 3d earth.
+- Rendering the satellites on earth from which the data is retrieved.
 - ML model predictions from satellite imagery.
 - Team did phenomenal job at helping each other and integrating stuff together. 
 
@@ -60,7 +61,7 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 
 ![](public/assetss/1.png)
 
-<h4 align="center">Wind patterms and locusts vizualized</h4>
+<h4 align="center">Wind patterms and locusts visualized</h4>
 
 ![](public/assetss/3.png)
 
@@ -91,7 +92,7 @@ Getting Started 🎬
 The easiest way to get started is to clone the repository:
 
 ```bash
-# Get the latest snapshot
+# Cloning the repo
 git clone https://github.com/Jappan07/LLAM
 
 # Change directory
@@ -107,11 +108,10 @@ npm run dev
 
 ```bash
 # project will start at localhost:3000
-https://localhost:3000
+visit https://localhost:3000 on any browser.
 ```
 
 **Note:** GPU intensive features are added into this project so it is suggested to run this application on a machine having dedicated gpu so that it could run smoothly. 
-
 
 
 License
