@@ -189,7 +189,6 @@ const Tracking = () => {
     let long = longitude
     let data = `lat-${lat}-long-${long}`
     setLoading(true)
-    setDisplayMessage("Predicting...")
     axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
       .then(response => {
         setLoading(false)
@@ -221,6 +220,7 @@ const Tracking = () => {
         <br />
         <button onClick={onFormSubmitHandler}>Predict</button>
         <button onClick={onResetHandler}>Reset</button>
+        {loading ? <p>Loading...</p> : null}
         {predictedData ? <p>{displayMessage} {predictedData.risk.toFixed(2)}%</p> : null}
       </form>
     </>
