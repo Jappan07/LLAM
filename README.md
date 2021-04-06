@@ -73,6 +73,11 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 
 ![](public/assetss/2.png)
 
+<h4 align="center">Satellites visualized through which data is retrieved</h4>
+
+![](public/assetss/5.png)
+
+
 
 Prerequisites
 -------------
