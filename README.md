@@ -7,10 +7,11 @@
 Project: L.L.A.M - Locust Location & Apprehension Module
 =======================
 
->  "Save crops from locust attacks"
+> "Save crops from locust attacks"
 
 **Web App**: https://locustlocator.vercel.app 🔗
 
+**Live Demo**: https://youtu.be/C1QmCuzrBw8 🔗
 ## What does this project do? 🤔
 
 LLAM tracks the realtime locusts location and visualizes wind patterns on earth.
@@ -55,7 +56,9 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 
 ## More about the project 🔥
 
-**Live Demo**: https://youtu.be/C1QmCuzrBw8
+**Web App**: https://locustlocator.vercel.app 🔗
+
+**Live Demo**: https://youtu.be/C1QmCuzrBw8 🔗
 
 <h4 align="center">Tracking feature</h4>
 
