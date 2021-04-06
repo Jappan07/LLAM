@@ -51,6 +51,7 @@ const Tracking = () => {
     // enabling lighting effects due to sun
     viewer.scene.globe.enableLighting = true;
 
+    // adding sentinel 2a satellite realtime visualization
     var dataSrc = Cesium.CzmlDataSource.load("orbit.czml");
     viewer.dataSources.add(dataSrc);
 
