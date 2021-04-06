@@ -24,8 +24,8 @@ const fetchData = async () => {
 const Tracking = () => {
   const [predictedData, setPredictedData] = useState(null)
   const [displayMessage, setDisplayMessage] = useState("")
-  const [longitude, setLongitude] = useState(0)
-  const [latitude, setLatitude] = useState(0)
+  const [longitude, setLongitude] = useState("")
+  const [latitude, setLatitude] = useState("")
   const [loading, setLoading] = useState(false)
 
   const init = (locationData, prediction) => {
@@ -54,7 +54,8 @@ const Tracking = () => {
     // viewer.scene.globe.enableLighting = true;
 
     // adding sentinel 2a, meteo 10 and spot 6 satellite realtime visualization
-    var dataSrc = Cesium.CzmlDataSource.load("orbit.czml");
+    viewer.dataSources.removeAll();
+    var dataSrc = Cesium.CzmlDataSource.load("sat.czml");
     viewer.dataSources.add(dataSrc);
 
 
@@ -74,15 +75,18 @@ const Tracking = () => {
     //   shapeEditMenu.style.display = "none";
     // }, Cesium.ScreenSpaceEventType.LEFT_DOWN);
 
-    // if (prediction) {
-    // viewer.entities.add({
-    //   position: Cesium.Cartesian3.fromDegrees(70, 30),
-    //   point: {
-    //     pixelSize: 30,
-    //     color: Cesium.Color.CRIMSON.withAlpha(0.4),
-    //   },
-    // });
+    // const plotPredictedPoint = (long, lat) => {
+
+    //   viewer.entities.add({
+    //     position: Cesium.Cartesian3.fromDegrees(long, lat),
+    //     point: {
+    //       pixelSize: 30,
+    //       color: Cesium.Color.CRIMSON.withAlpha(0.4),
+    //     },
+    //   });
+
     // }
+
 
     // populating locust locations on globe
     var billboards = viewer.scene.primitives.add(new Cesium.BillboardCollection());
@@ -175,7 +179,7 @@ const Tracking = () => {
     const locationData = await fetchData()
     const prediction = await predictedData
     init(locationData, prediction);
-  }, [])
+  }, [predictedData])
 
   const onFormSubmitHandler = (event) => {
     event.preventDefault();
@@ -191,14 +195,15 @@ const Tracking = () => {
         setLoading(false)
         setDisplayMessage("Predicted Probability = ")
         setPredictedData(response.data)
+        // plotPredictedPoint(longitude, latitude)
       })
   }
 
   const onResetHandler = (event) => {
     event.preventDefault();
     setDisplayMessage("")
-    setLongitude(0)
-    setLatitude(0)
+    setLongitude("")
+    setLatitude("")
     setPredictedData(null)
   }
 
