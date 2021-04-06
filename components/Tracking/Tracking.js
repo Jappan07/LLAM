@@ -51,6 +51,9 @@ const Tracking = () => {
     // enabling lighting effects due to sun
     viewer.scene.globe.enableLighting = true;
 
+    var dataSrc = Cesium.CzmlDataSource.load("orbit.czml");
+    viewer.dataSources.add(dataSrc);
+
 
     // var editHandler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
     // editHandler.setInputAction(function (e) {
