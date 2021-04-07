@@ -81,7 +81,8 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 
 <h4 align="center">ML Pipeline</h4>
 
-![https://drive.google.com/file/d/1g6OHy5ZD4szA-MYwIqhsx4ThTgVz9s6F/view?usp=sharing](public/assetss/ml-model.png)
+<a href="https://drive.google.com/file/d/1g6OHy5ZD4szA-MYwIqhsx4ThTgVz9s6F/view?usp=sharing">
+<img src="public/assetss/ml-model.png" /></a>
 
 
 
