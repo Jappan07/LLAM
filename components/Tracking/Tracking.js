@@ -3,7 +3,6 @@ import axios from "axios"
 import * as Cesium from 'cesium';
 import CesiumWind from "./Wind";
 
-
 // fetching locust locations
 const fetchData = async () => {
   let data = []
@@ -17,7 +16,6 @@ const fetchData = async () => {
         })
       })
     })
-
   return data
 }
 
@@ -28,7 +26,7 @@ const Tracking = () => {
   const [latitude, setLatitude] = useState("")
   const [loading, setLoading] = useState(false)
 
-  const init = (locationData, prediction) => {
+  const init = (locationData) => {
     // default view over India
     var west = 68.0;
     var south = 7.0;
@@ -97,7 +95,6 @@ const Tracking = () => {
         });
       })
     }
-
 
     // adding position marker
     var entity = viewer.entities.add({
@@ -176,8 +173,8 @@ const Tracking = () => {
 
   useEffect(async () => {
     const locationData = await fetchData()
-    const prediction = await predictedData
-    init(locationData, prediction);
+    // const prediction = await predictedData
+    init(locationData);
   }, [])
 
   const onFormSubmitHandler = (event) => {
