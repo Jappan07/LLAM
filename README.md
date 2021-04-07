@@ -1,4 +1,3 @@
-<!-- ![](public/assetss/0*OgwmV3DsLS387GMr.png) -->
 <img width="100%" src="https://github.com/Jappan07/LLAM/blob/master/public/Assets/Screenshot%20from%202021-04-06%2001-27-30.png" />
 <p align="center">
 <img width="300px" src="public/assetss/llamLogo.png" />
@@ -79,6 +78,10 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 <h4 align="center">Satellites visualized through which data is retrieved</h4>
 
 ![](public/assetss/5.png)
+
+<h4 align="center">ML Pipeline</h4>
+
+![https://drive.google.com/file/d/1g6OHy5ZD4szA-MYwIqhsx4ThTgVz9s6F/view?usp=sharing](public/assetss/ml-model.png)
 
 
 
