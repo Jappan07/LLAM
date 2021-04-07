@@ -55,9 +55,9 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 
 ## More about the project 🔥
 
-**Web App**: https://locustlocator.vercel.app 🔗
+**Web App**: <a href="https://locustlocator.vercel.app">https://locustlocator.vercel.app 🔗</a>
 
-**Live Demo**: https://youtu.be/C1QmCuzrBw8 🔗
+**Live Demo**:  <a href="https://youtu.be/C1QmCuzrBw8">https://youtu.be/C1QmCuzrBw8 🔗</a>
 
 <h4 align="center">Tracking feature</h4>
 
@@ -79,9 +79,9 @@ The inspiration behind L.L.A.M was that locusts are increasingly becoming a grea
 
 ![](public/assetss/5.png)
 
-<h4 align="center">ML Pipeline</h4>
+<a target="_blank" href="https://drive.google.com/file/d/1g6OHy5ZD4szA-MYwIqhsx4ThTgVz9s6F/view?usp=sharing"><h4 align="center">ML Pipeline 🔗</h4></a>
 
-<a href="https://drive.google.com/file/d/1g6OHy5ZD4szA-MYwIqhsx4ThTgVz9s6F/view?usp=sharing">
+<a target="_blank" href="https://drive.google.com/file/d/1g6OHy5ZD4szA-MYwIqhsx4ThTgVz9s6F/view?usp=sharing">
 <img src="public/assetss/ml-model.png" /></a>
 
 
