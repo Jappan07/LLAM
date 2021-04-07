@@ -47,11 +47,6 @@ ul {
   list-style: none;
 }
 
-.errorPage {
-  margin: 400px auto;
-  text-align: center;
-}
-
 a {
   text-decoration: none;
 }
@@ -161,5 +156,50 @@ a {
       background-color: #2bc710;
       ;
     }
+  }
+}
+
+
+// custom 404 page css
+.errorPage {
+  text-align: center;
+  height: 100vh;
+
+  a {
+    color: #888;
+    // font-size: 0.9rem;
+
+    &:hover {
+      color: rgb(95, 95, 95);
+    }
+  }
+}
+
+#errorPageContainer {
+  margin: 300px auto 0;
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+.fof {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.fof h1 {
+  font-size: 50px;
+  display: inline-block;
+  padding-right: 12px;
+  animation: type .5s alternate infinite;
+}
+
+@keyframes type {
+  from {
+    box-shadow: inset -3px 0px 0px #888;
+  }
+
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
   }
 }

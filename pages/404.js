@@ -3,7 +3,12 @@ import Image from "next/image"
 const NotFoundPage = () => {
     return (
         <div className="errorPage">
-            <Image width="400" height="400" src="/assetss/404Illustration.gif" alt="404-image" />
+            <div id="errorPageContainer">
+                <div className="fof">
+                    <h1>Error 404</h1>
+                </div>
+            </div>
+            <a href="/">Navigate Back To <u>Home</u></a>
         </div>
     )
 }
