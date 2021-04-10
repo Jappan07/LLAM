@@ -10,8 +10,9 @@
         margin: 50px;
         padding: 20px 30px;
         background: #F8F5E4;
-        border-radius: 10px;
-        box-shadow: -6px -6px 20px rgba(255, 255, 255, 1), 6px 6px 20px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
+6px 6px 20px rgba(0, 0, 0, 0.1);
 
         &:hover {
             box-shadow: inset -6px -6px 20px rgba(255, 255, 255, 0.5), inset 6px 6px 20px rgba(0, 0, 0, 0.1);

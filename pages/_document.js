@@ -12,7 +12,7 @@ class MyDocument extends Document {
                 <Head>
                     <link rel="icon" href="/favicon.ico" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
-                    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&family=Space+Mono&display=swap" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Open+Sans&display=swap" rel="stylesheet" />
                     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                 </Head>
                 <body>
