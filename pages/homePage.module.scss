@@ -155,8 +155,12 @@
         flex-direction: column-reverse;
         align-items: center;
 
-        @media screen and (max-width:768px) {
+        @media screen and (max-width:1200px) {
             margin-top: 100px;
+        }
+
+        @media screen and (max-width:768px) {
+            margin-top: 80px;
         }
 
         @media screen and (max-width:481px) {
@@ -172,7 +176,6 @@
         }
 
         @media screen and (max-width:1200px) {
-            margin-top: 120px;
 
             ul {
                 grid-template-columns: 500px;
@@ -212,12 +215,12 @@
 
         @media screen and (max-width:1200px) {
             width: 700px;
-            margin: 120px auto;
+            margin: 100px auto;
         }
 
         @media screen and (max-width:768px) {
             width: 350px;
-            margin: 100px auto;
+            margin: 80px auto;
         }
 
         @media screen and (max-width:481px) {
