@@ -145,23 +145,25 @@
 
 .FeaturesSection {
     text-align: center;
-    padding: 7% 5% 5%;
+    padding: 5% 5% 5%;
 
     .Features {
-        margin-top: 100px;
+        margin-top: 150px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         flex-direction: column-reverse;
         align-items: center;
-        // margin-top: 150px;
+
+        @media screen and (max-width:768px) {
+            margin-top: 100px;
+        }
+
+        @media screen and (max-width:481px) {
+            margin-top: 80px;
+        }
 
         ul {
-            // width: 50%;
-            // max-width: 1200px;
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: space-evenly;
             display: grid;
             grid-template-columns: 500px 500px;
             grid-row: auto auto;
@@ -170,8 +172,7 @@
         }
 
         @media screen and (max-width:1200px) {
-            // flex-direction: column-reverse;
-            // margin-top: 0px;
+            margin-top: 120px;
 
             ul {
                 grid-template-columns: 500px;
@@ -197,8 +198,7 @@
 }
 
 .HowItWorksSection {
-    width: 100%;
-    padding: 7% 5% 5%;
+    padding: 5% 5% 5%;
     text-align: center;
     background-color: #222831;
 
@@ -208,18 +208,21 @@
 
     .Working {
         width: 1100px;
-        margin: 100px auto;
+        margin: 150px auto;
 
         @media screen and (max-width:1200px) {
             width: 700px;
+            margin: 120px auto;
         }
 
         @media screen and (max-width:768px) {
             width: 350px;
+            margin: 100px auto;
         }
 
         @media screen and (max-width:481px) {
             width: 300px;
+            margin: 80px auto;
         }
 
         p {
