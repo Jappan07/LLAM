@@ -65,6 +65,11 @@
         margin-bottom: 15px;
     }
 
+    @media screen and (max-width:320px) {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
