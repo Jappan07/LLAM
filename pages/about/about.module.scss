@@ -20,6 +20,7 @@
         font-size: calc(16px + 0.7vw);
 
         @media screen and(max-width:481px) {
+            font-size: 16px;
             padding: 5% 8% 15%;
         }
 

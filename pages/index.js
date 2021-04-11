@@ -91,13 +91,13 @@ const HomePage = () => {
                             <li data-aos="fade-right">
                                 <SmallCard component="protection" Heading="Protection" Text="Protect crops from getting destroyed by locusts" />
                             </li>
-                            <li data-aos="fade-right" data-aos-delay="300">
+                            <li data-aos="fade-right" data-aos-delay="100">
                                 <SmallCard component="map" Heading="Tracking" Text="Track the trajectory of locusts easily" />
                             </li>
                             <li data-aos="fade-left">
                                 <SmallCard component="satellite" Heading="Accuracy" Text="Satellite imagery gives accurate results" />
                             </li>
-                            <li data-aos="fade-left" data-aos-delay="300">
+                            <li data-aos="fade-left" data-aos-delay="100">
                                 <SmallCard component="calm" special Heading="No Stress" Text="Taking precautions beforehand for stress free harvesting" />
                             </li>
                         </ul>
