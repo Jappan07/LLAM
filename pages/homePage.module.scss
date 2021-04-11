@@ -35,6 +35,20 @@
             }
         }
     }
+
+    @media screen and (max-width:481px) {
+        height: 50vh;
+
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 700px;
+        }
+
+        .heroContent {
+            top: 42vw;
+        }
+    }
 }
 
 .animation {
