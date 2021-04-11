@@ -248,7 +248,6 @@
             background-color: #fff;
             text-align: center;
             color: #222831;
-            // font-size: 110%;
         }
 
         p:nth-child(odd):before {
@@ -300,7 +299,7 @@
         font-size: calc(16px + 2.2vw);
 
         @media screen and (max-width:481px) {
-            // margin-bottom: 0px;
+            margin-bottom: 0px;
         }
     }
 }

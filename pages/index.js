@@ -7,7 +7,6 @@ import { faSearchLocation } from '@fortawesome/free-solid-svg-icons'
 import { motion } from "framer-motion"
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SmallCard from "../components/UI/Cards/SmallCard/SmallCard"
-import NeumorphismCard from "../components/UI/Cards/NeumorphismCard/NeumorphismCard"
 import LottieEarth from "../components/LottieAnimations/earth/earth"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -102,8 +101,6 @@ const HomePage = () => {
                                 <SmallCard component="calm" special Heading="No Stress" Text="Taking precautions beforehand for stress free harvesting" />
                             </li>
                         </ul>
-                        {/* lottie earth animation goes here */}
-                        {/* <LottieEarth /> */}
                     </div>
                 </section>
                 <section id="how-it-works-section" className={classes.HowItWorksSection}>
@@ -111,11 +108,6 @@ const HomePage = () => {
                         How it Works?
                     </h1>
                     <div className={classes.Working}>
-                        {/* <ul>
-                            <li data-aos="slide-right" data-aos-duration="1300"><NeumorphismCard number="1" Heading="" Text="Collecting Real time data from various source " /></li>
-                            <li data-aos="slide-right" data-aos-duration="1000"><NeumorphismCard number="2" Heading="" Text="Processing these data on our bi layer ML models to find out the Risk and future attack possibilities " /></li>
-                            <li data-aos="slide-right" data-aos-duration="700"><NeumorphismCard number="3" Heading="" Text="Visualise through Plotting or Quering the data" /></li>
-                        </ul> */}
                         <p>Collecting Real time data from various source</p>
                         <p>Processing these data on our bi layer ML models to find out the Risk and future attack possibilities</p>
                         <p>Visualise through Plotting or Quering the data</p>
