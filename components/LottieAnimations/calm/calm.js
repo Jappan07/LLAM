@@ -15,8 +15,8 @@ const LottieCalm = () => {
         <div>
             <Lottie
                 options={defaultOptions}
-                height={220}
-                width={220}
+                height={230}
+                width={230}
             />
         </div>
     );

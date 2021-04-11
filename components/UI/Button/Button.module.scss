@@ -12,7 +12,7 @@
     font-family: lato;
     z-index: 0;
     overflow: hidden;
-    border: 3px solid #ffd369;
+    border: 3px solid #fff;
     transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
@@ -45,7 +45,7 @@
     @media screen and (max-width:481px) {
         height: 30px;
         width: 130px;
-        border: 1px solid #ffd369;
+        border: 1px solid #fff;
     }
 }
 

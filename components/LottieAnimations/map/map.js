@@ -15,8 +15,8 @@ const LottieMap = () => {
         <div>
             <Lottie
                 options={defaultOptions}
-                height={180}
-                width={180}
+                height={230}
+                width={230}
             />
         </div>
     );

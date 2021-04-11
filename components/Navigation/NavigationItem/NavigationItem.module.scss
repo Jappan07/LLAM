@@ -14,7 +14,7 @@
 
 
     &:hover {
-        color: #ffd369;
+        color: #fff;
     }
 
     &:after {
@@ -25,7 +25,7 @@
         height: 2px;
         left: 50%;
         position: absolute;
-        background: #ffd369;
+        background: #fff;
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
     }
@@ -75,11 +75,11 @@
         }
 
         &:hover {
-            color: #ffd369;
+            color: #fff;
         }
 
         &:after {
-            background: #ffd369;
+            background: #fff;
         }
     }
 

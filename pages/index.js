@@ -103,7 +103,7 @@ const HomePage = () => {
                             </li>
                         </ul>
                         {/* lottie earth animation goes here */}
-                        <LottieEarth />
+                        {/* <LottieEarth /> */}
                     </div>
                 </section>
                 <section id="how-it-works-section" className={classes.HowItWorksSection}>
@@ -111,11 +111,14 @@ const HomePage = () => {
                         How it Works?
                     </h1>
                     <div className={classes.Working}>
-                        <ul>
+                        {/* <ul>
                             <li data-aos="slide-right" data-aos-duration="1300"><NeumorphismCard number="1" Heading="" Text="Collecting Real time data from various source " /></li>
                             <li data-aos="slide-right" data-aos-duration="1000"><NeumorphismCard number="2" Heading="" Text="Processing these data on our bi layer ML models to find out the Risk and future attack possibilities " /></li>
                             <li data-aos="slide-right" data-aos-duration="700"><NeumorphismCard number="3" Heading="" Text="Visualise through Plotting or Quering the data" /></li>
-                        </ul>
+                        </ul> */}
+                        <p>Collecting Real time data from various source</p>
+                        <p>Processing these data on our bi layer ML models to find out the Risk and future attack possibilities</p>
+                        <p>Visualise through Plotting or Quering the data</p>
                     </div>
                 </section>
             </div>

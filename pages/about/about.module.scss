@@ -17,7 +17,7 @@
     .AboutSection1 {
         padding: 5% 15% 15%;
         background-color: #f4f9fa;
-        font-size: calc(16px + 0.7vw);
+        font-size: calc(18px + 0.7vw);
 
         @media screen and(max-width:481px) {
             padding: 5% 8% 15%;
@@ -32,7 +32,7 @@
         p {
             letter-spacing: 2px;
             line-height: 1.8;
-            font-size: calc(14px + 0.8vw);
+            font-size: calc(14px + 0.7vw);
         }
 
         span {
@@ -55,10 +55,10 @@
 
         h2 {
             font-size: calc(14px + 2.2vw);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
 
             @media screen and(max-width:481px) {
-                font-size: 20px;
+                font-size: 22px;
             }
         }
 
@@ -71,7 +71,7 @@
 
             @media screen and(max-width:1200px) {
                 margin-top: 50px;
-                margin-bottom: 50px;
+                margin-bottom: 40px;
             }
 
             p {
