@@ -194,7 +194,7 @@ const Tracking = () => {
 
   const prevLat = usePrevious(latitude);
   const prevLong = usePrevious(longitude);
-  const prevPredictedData = usePrevious(predictedData);
+  // const prevPredictedData = usePrevious(predictedData);
 
   const onFormSubmitHandler = (event) => {
     event.preventDefault();

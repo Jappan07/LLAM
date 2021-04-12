@@ -4,42 +4,11 @@ import { NextSeo } from "next-seo"
 import SecurityIcon from '@material-ui/icons/Security';
 import classes from "./about.module.scss"
 
-function usePrevious(value) {
-    // The ref object is a generic container whose current property is mutable ...
-    // ... and can hold any value, similar to an instance property on a class
-    console.log(value)
-    const ref = useRef();
-    // Store current value in ref
-    useEffect(() => {
-        ref.current = value;
-    }, [value]); // Only re-run if value changes
-    // Return previous value (happens before update in useEffect above)
-    return ref.current;
-}
-
 const About = () => {
-    const [count, setCount] = useState({ risk: 0 });
-    // Get the previous value (was passed into hook on last render)
-    const prevCount = usePrevious(count);
-    console.log("prevCount-->" + prevCount)
-    const SEO = {
-        title: "About",
-        description: "about page of LLAM",
-
-        openGraph: {
-            title: "About",
-            description: "about page of LLAM",
-        },
-    }
     return (
         <>
             <NextSeo {...SEO} />
             <div className={classes.Container}>
-                <h1>
-                    Now: {count.risk}, before:
-                    {prevCount ? prevCount.risk : null}
-                </h1>
-                <button onClick={() => setCount({ risk: 2 })}>Increment</button>
                 <h1>Our mission:<br />
                     Safeguard crops from locust attacks
                 </h1>
