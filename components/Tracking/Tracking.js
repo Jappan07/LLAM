@@ -208,7 +208,6 @@ const Tracking = () => {
     }
     else if (prevLat === lat && prevLong === long) {
       console.log("lat and long matched with prev values")
-      setPredictedData(prevPredictedData)
     }
     else {
       let data = `lat-${lat}-long-${long}`
