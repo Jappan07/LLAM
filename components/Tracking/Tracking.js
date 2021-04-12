@@ -227,6 +227,7 @@ const Tracking = () => {
     setDisplayMessage("")
     setLongitude("")
     setLatitude("")
+    setLoading(false)
     setPredictedData(null)
   }
 
