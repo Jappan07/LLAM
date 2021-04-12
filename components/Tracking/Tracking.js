@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from "axios"
 import * as Cesium from 'cesium';
 import CesiumWind from "./Wind";
@@ -19,7 +19,22 @@ const fetchData = async () => {
   return data
 }
 
+const usePrevious = (value) => {
+  // The ref object is a generic container whose current property is mutable ...
+  // ... and can hold any value, similar to an instance property on a class
+  console.log(value)
+  const ref = useRef();
+  // Store current value in ref
+  useEffect(() => {
+    ref.current = value;
+  }, [value]); // Only re-run if value changes
+  // Return previous value (happens before update in useEffect above)
+  return ref.current;
+}
+
+
 const Tracking = () => {
+
   const [predictedData, setPredictedData] = useState(null)
   const [displayMessage, setDisplayMessage] = useState("")
   const [longitude, setLongitude] = useState("")
@@ -177,21 +192,35 @@ const Tracking = () => {
     init(locationData);
   }, [])
 
+  const prevLat = usePrevious(latitude);
+  const prevLong = usePrevious(longitude);
+  const prevPredictedData = usePrevious(predictedData);
+
   const onFormSubmitHandler = (event) => {
     event.preventDefault();
     console.log("Longitude: " + longitude)
     console.log("Latitude: " + latitude)
     let lat = latitude
     let long = longitude
-    let data = `lat-${lat}-long-${long}`
-    setLoading(true)
-    axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
-      .then(response => {
-        setLoading(false)
-        setDisplayMessage("Predicted Probability = ")
-        setPredictedData(response.data)
-        // plotPredictedPoint(longitude, latitude)
-      })
+
+    if (lat === "" && long === "") {
+      setPredictedData({ risk: NaN })
+    }
+    else if (prevLat === lat && prevLong === long) {
+      console.log("lat and long matched with prev values")
+      setPredictedData(prevPredictedData)
+    }
+    else {
+      let data = `lat-${lat}-long-${long}`
+      setLoading(true)
+      axios.post(`https://landcoverapi.azurewebsites.net/predict/${data}`)
+        .then(response => {
+          setLoading(false)
+          setDisplayMessage("Predicted Probability = ")
+          setPredictedData(response.data)
+          // plotPredictedPoint(longitude, latitude)
+        })
+    }
   }
 
   const onResetHandler = (event) => {
