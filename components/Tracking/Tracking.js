@@ -61,10 +61,19 @@ const Tracking = () => {
       selectionIndicator: true,
       imageryProviderViewModels: imagery,
       selectedImageryProviderViewModel: imagery[1],
+      animation: false,
+      timeline: false,
       // automaticallyTrackDataSourceClocks: false
     });
+
+    // var provider = new Cesium.GoogleEarthEnterpriseMapsProvider({
+    //   url: 'https://earth.localdomain',
+    //   channel: 1008
+    // });
+
+    // viewer.imageryLayers.addImageryProvider(provider);
     // enabling lighting effects due to sun
-    // viewer.scene.globe.enableLighting = true;
+    viewer.scene.globe.enableLighting = true;
 
     // adding sentinel 2a, meteo 10 and spot 6 satellite realtime visualization
     viewer.dataSources.removeAll();

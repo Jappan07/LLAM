@@ -87,6 +87,23 @@ a {
   }
 }
 
+.cesium-widget-credits {
+  display: none !important;
+}
+
+#loading-overlay {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  pointer-events: none;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 1) url("/assetss/loading.gif") no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
 #toolbar {
   color: #fff;
   width: 200px;
