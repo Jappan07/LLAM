@@ -85,7 +85,7 @@ const HomePage = () => {
                     </div>
                 </section>
                 <section id="features-section" className={classes.FeaturesSection}>
-                    <h1 data-aos="zoom-in">Why Locust Location & Apprehension Module?</h1>
+                    <h1>Why Locust Location & Apprehension Module?</h1>
                     <div className={classes.Features}>
                         <ul>
                             <li data-aos="fade-right">
