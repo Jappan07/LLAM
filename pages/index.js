@@ -97,7 +97,7 @@ const HomePage = () => {
                             <li data-aos="fade-right">
                                 <SmallCard component="satellite" Heading="Accuracy" Text="Satellite imagery gives accurate results" />
                             </li>
-                            <li data-aos="fade-right" data-aos-delay="300">
+                            <li data-aos="fade-right" data-aos-delay="200">
                                 <SmallCard component="calm" special Heading="No Stress" Text="Taking precautions beforehand for stress free harvesting" />
                             </li>
                         </ul>
