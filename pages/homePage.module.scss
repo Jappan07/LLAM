@@ -214,6 +214,17 @@
         -moz-animation: fadeIn 2.5s;
         -o-animation: fadeIn 2.5s;
         -ms-animation: fadeIn 2.5s;
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            border-top: solid #000;
+            border-top-width: 0.5vw;
+            top: -0.2vw;
+            width: 12%;
+            border-radius: 10px;
+        }
 
         @keyframes fadeIn {
             0% {
@@ -336,6 +347,17 @@
 
     h1 {
         font-size: calc(16px + 2.2vw);
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            border-top: solid #fff;
+            border-top-width: 0.5vw;
+            top: -0.2vw;
+            width: 6%;
+            border-radius: 10px;
+        }
 
         @media screen and (max-width:481px) {
             margin-bottom: 0px;
